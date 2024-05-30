@@ -1,0 +1,714 @@
+[
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node2ed1-nodecabc",
+          "source": "node2ed1",
+          "target": "nodecabc"
+        },
+        {
+          "id": "reactflow__edge-node5640-node2ed1",
+          "source": "node5640",
+          "target": "node2ed1"
+        },
+        {
+          "id": "reactflow__edge-nodecabc-node6912",
+          "source": "nodecabc",
+          "target": "node6912"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "columns": [
+                "title",
+                "description"
+              ],
+              "ner_column": "Aspect Based Sentiment"
+            },
+            "id": "opnlpaspectsenti01"
+          },
+          "id": "nodecabc",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 153.3853761687512,
+              "y": 426.8994907135957
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "nlp_ner_senti_asp_results.csv"
+            },
+            "id": "opsaveoutputdata01"
+          },
+          "id": "node6912",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 863.0544177430463,
+              "y": 597.5551560651531
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "currency_removal": false,
+              "digit_removal": false,
+              "email_removal": false,
+              "emoji_removal": true,
+              "feature_columns": [
+                "title",
+                "description"
+              ],
+              "lowercase": false,
+              "punctuation_removal": true,
+              "remove_brackets": true,
+              "stopword_removal": true,
+              "tweet_normalization": false,
+              "uppercase": false,
+              "url_removal": false
+            },
+            "id": "optextnorm01"
+          },
+          "id": "node2ed1",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 46.048325746730995,
+              "y": 205.84334336516338
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "ag_news"
+            },
+            "id": "opsamplesrc01"
+          },
+          "id": "node5640",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -151.05870119270165,
+              "y": 322.4597194322231
+            }
+          }
+        }
+      ]
+    },
+    "description": "Workflow to find Named Entities, and Sentiments in text data",
+    "name": "Entity Detection, and Sentiment Analysis",
+    "template_id": "temp-nlp-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node3c2a-node9f9c",
+          "source": "node3c2a",
+          "target": "node9f9c"
+        },
+        {
+          "id": "reactflow__edge-node9f9c-node7082",
+          "source": "node9f9c",
+          "target": "node7082"
+        },
+        {
+          "id": "reactflow__edge-node7082-nodeaf23",
+          "source": "node7082",
+          "target": "nodeaf23"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {},
+            "id": "opmkvlibraryconnectorsource01"
+          },
+          "id": "node3c2a",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -458.7132034301756,
+              "y": 214.81075859069824
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "feature_columns": [
+                "Text"
+              ],
+              "lowercase": true
+            },
+            "id": "optextnorm01"
+          },
+          "id": "node9f9c",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -260.2062606811522,
+              "y": 207.83506202697754
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {},
+            "id": "oppiiobfuscation01"
+          },
+          "id": "node7082",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -81.20626068115217,
+              "y": 206.33506202697754
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {},
+            "id": "opsaveoutputdata01"
+          },
+          "id": "nodeaf23",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 120.29373931884783,
+              "y": 266.33506202697754
+            }
+          }
+        }
+      ]
+    },
+    "description": "Workflow for PII obfuscation and downloading the results",
+    "name": "PII Obfuscation",
+    "template_id": "temp-pii-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node5633-node0c63",
+          "source": "node5633",
+          "target": "node0c63"
+        },
+        {
+          "id": "reactflow__edge-node0c63-node33de",
+          "source": "node0c63",
+          "target": "node33de"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "resource_id": "n5gWmF5Q"
+            },
+            "id": "ops3connectorsource01"
+          },
+          "id": "node5633",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -50.249999999999886,
+              "y": 191.99999999999994
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "columns": [
+                "text"
+              ],
+              "target_language": "Spanish"
+            },
+            "id": "optranslate01"
+          },
+          "id": "node0c63",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 337.25,
+              "y": 106.74999999999994
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {},
+            "id": "opsaveoutputdata01"
+          },
+          "id": "node33de",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 790,
+              "y": 351.5
+            }
+          }
+        }
+      ]
+    },
+    "description": "Easily convert text from one language to other supported Languages",
+    "name": "Language Translation",
+    "template_id": "temp-translate-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node342d-node5863",
+          "source": "node342d",
+          "target": "node5863"
+        },
+        {
+          "id": "reactflow__edge-node5863-node84f5",
+          "source": "node5863",
+          "target": "node84f5"
+        },
+        {
+          "id": "reactflow__edge-node84f5-node667f",
+          "source": "node84f5",
+          "target": "node667f"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "s3_access_key": "",
+              "s3_path": "s3://markovml-kubeflow-logs-dev/invoice_bills/",
+              "s3_secret_key": ""
+            },
+            "id": "ops3source01"
+          },
+          "id": "node342d",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -183.24351501464835,
+              "y": 43.539052963256836
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {},
+            "id": "opinvanalysis01"
+          },
+          "id": "node5863",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 28.341536258026224,
+              "y": 63.435618246829335
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "user_prompt": "Using the text in itemDescription, classify each row as \"Dessert\", \"Fruit\", \"Drinks\" or \"Mains\". Create a new column called \"prediction\" with the result of classification."
+            },
+            "id": "opllmtransform01"
+          },
+          "id": "node84f5",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 256.27185772552565,
+              "y": 40.05814937836789
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "updated_invoices.csv"
+            },
+            "id": "opsaveoutputdata01"
+          },
+          "id": "node667f",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 463.7468939331213,
+              "y": 54.66906742115626
+            }
+          }
+        }
+      ]
+    },
+    "description": "Extract data from restaurant invoices, and classify the extracted data into categories",
+    "name": "Invoice Data Extraction and Classification with AI",
+    "template_id": "temp-ai_invoice-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node5782-node9be0",
+          "source": "node5782",
+          "target": "node9be0"
+        },
+        {
+          "id": "reactflow__edge-node9be0-nodec6e0",
+          "source": "node9be0",
+          "target": "nodec6e0"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "resource_id": "MocJ2zVW"
+            },
+            "id": "oppostgresconnectorsource01"
+          },
+          "id": "node5782",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -53.999999999999915,
+              "y": 141.25000000000003
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "user_prompt": "For each row, create a new column called label. The value of label for each row depends on the value of 'class' for that row. If class is 1, label should be \"World\". If class is 2, label should be \"Sports\". If class is 3, label should be \"Business\". If class is 4, label should be \"Sci/Tech\". "
+            },
+            "id": "opllmtransform01"
+          },
+          "id": "node9be0",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 209.0000000000001,
+              "y": 141.75
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "feature_columns": [
+                "title",
+                "description"
+              ],
+              "target_column": "label"
+            },
+            "id": "opautoml01"
+          },
+          "id": "nodec6e0",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 462.5000000000001,
+              "y": 161.75
+            }
+          }
+        }
+      ]
+    },
+    "description": "Use AI to enhance labels of datasets, and train an AutoML model with those labels",
+    "name": "AutoML Model with AI enhanced labels",
+    "template_id": "temp-ai-automl-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node77b6-process1",
+          "source": "node77b6",
+          "target": "process1"
+        },
+        {
+          "id": "reactflow__edge-process1-node34fa",
+          "source": "process1",
+          "target": "node34fa"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "currency_removal": true,
+              "digit_removal": true,
+              "email_removal": true,
+              "emoji_removal": true,
+              "feature_columns": [
+                "description"
+              ],
+              "lowercase": true,
+              "punctuation_removal": false,
+              "remove_brackets": false,
+              "stopword_removal": true,
+              "tweet_normalization": true,
+              "uppercase": false,
+              "url_removal": true
+            },
+            "id": "optextnorm01"
+          },
+          "id": "process1",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 541.9169365082327,
+              "y": 216.02368451488508
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "ag_news"
+            },
+            "id": "opsamplesrc01"
+          },
+          "id": "node77b6",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 187.7527891303082,
+              "y": 252.80129378071183
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {},
+            "id": "opsaveoutputdata01"
+          },
+          "id": "node34fa",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 851.5027891303083,
+              "y": 60.30129378071183
+            }
+          }
+        }
+      ]
+    },
+    "description": "Workflow containing all operations required for data normalisation",
+    "name": "Data normalisations",
+    "template_id": "temp-norm-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node7-node4",
+          "source": "node7",
+          "target": "node4"
+        },
+        {
+          "id": "reactflow__edge-node4-node8",
+          "source": "node4",
+          "target": "node8"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "feature_columns": [
+                "Avg. Session Length",
+                "Time on App",
+                "Time on Website",
+                "Length of Membership"
+              ],
+              "outlier_column_name": "is_outlier"
+            },
+            "id": "opoutlierdet01",
+            "label": "Outlier Detection Operator"
+          },
+          "id": "node4",
+          "type": "Process",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -104.5227228357877,
+              "y": 153.27775360234898
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "vecom"
+            },
+            "id": "ops3source01",
+            "label": "S3 Source Operator"
+          },
+          "id": "node7",
+          "type": "Source",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -507.36788039185586,
+              "y": 153.48488019636926
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "bucket_name": "markovml-example-datasets",
+              "file_format": "csv",
+              "file_key": "outlier_detection_results.csv"
+            },
+            "id": "ops3sink01",
+            "label": "S3 Sink Operator"
+          },
+          "id": "node8",
+          "type": "Sink",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 346.4797383106955,
+              "y": 152.5956884851828
+            }
+          }
+        }
+      ]
+    },
+    "description": "This template, outlines an easy to use workflow designed for efficiently detecting outliers within data",
+    "name": "Outlier Detection Workflow Template",
+    "template_id": "temp-outlier-001"
+  },
+  {
+    "author": "MarkovML",
+    "dag": {
+      "edges": [
+        {
+          "id": "reactflow__edge-node7657-node5d9a",
+          "source": "node7657",
+          "target": "node5d9a"
+        },
+        {
+          "id": "reactflow__edge-node5d9a-nodeec31",
+          "source": "node5d9a",
+          "target": "nodeec31"
+        },
+        {
+          "id": "reactflow__edge-nodeec31-node3c4f",
+          "source": "nodeec31",
+          "target": "node3c4f"
+        }
+      ],
+      "nodes": [
+        {
+          "data": {
+            "configuration": {
+              "columns": [
+                "Category",
+                "Resume"
+              ],
+              "find_job_titles": true,
+              "find_skills": true,
+              "job_titles_column": "Job Titles",
+              "skills_column": "Skills"
+            },
+            "id": "opjobskills01"
+          },
+          "id": "node5d9a",
+          "type": "Process",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 13.114525934953804,
+              "y": 226.6638799054399
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "resume"
+            },
+            "id": "opsamplesrc01"
+          },
+          "id": "node7657",
+          "type": "Source",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": -391.21237498969947,
+              "y": 265.27937044318764
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "feature_columns": [
+                "Resume"
+              ],
+              "regex_patterns": [
+                {
+                  "find": "Programming",
+                  "replace": "Coding"
+                },
+                {
+                  "find": "Education",
+                  "replace": "Schooling"
+                }
+              ]
+            },
+            "id": "opfindreplace01"
+          },
+          "id": "nodeec31",
+          "type": "Process",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 341.1737358272643,
+              "y": 292.0752550465638
+            }
+          }
+        },
+        {
+          "data": {
+            "configuration": {
+              "file_name": "cleaned_resume_results.csv"
+            },
+            "id": "opsaveoutputdata01"
+          },
+          "id": "node3c4f",
+          "type": "Sink",
+          "uiData": {
+            "additional": {},
+            "position": {
+              "x": 530.565083629381,
+              "y": 68.8520929472989
+            }
+          }
+        }
+      ]
+    },
+    "description": "Quickly find skills and job tiles from resumes",
+    "name": "Skill and Job Title Detection",
+    "template_id": "temp-jobskills-001"
+  }
+]
